@@ -1,12 +1,31 @@
-<!-- services -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services - Public Transport Survey</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Real-Time Bus Tracking</title>
+  <!-- Include Leaflet CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css">
+  
+  <!-- Include Leaflet Routing Machine CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.0/leaflet-routing-machine.min.css">
+
+  <!-- Include the Leaflet JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+  
+  <!-- Include Leaflet Routing Machine JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.0/leaflet-routing-machine.min.js"></script>
+  
+  <!-- Add your custom styles if needed -->
+  <style>
+    #map {
+      height: 500px;
+    }
+    .route-selector {
+      margin: 20px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar">
@@ -30,32 +49,29 @@
   <!-- Hero Section -->
   <header class="hero">
     <div class="hero-overlay">
-      <h1>Welcome to the Public Transport Survey</h1>
-      <p>Explore how your feedback is shaping a better public transport system. Find real-time bus tracking, access survey insights, and contribute to making public commuting more efficient and user-friendly.</p>
+      <h1>Real-Time Bus Tracking</h1>
+      <p>Select a route to display its path and stops on the map.</p>
     </div>
   </header>
 
-  <!-- Services Section -->
-  <section class="features">
-    <h2>Our Services</h2>
-    <div class="features-container">
-      <div class="feature-item">
-        <a href="bus-tracking.html" class="feature-button"><i class="fas fa-bus"></i></a>
-        <h3>Real-Time Bus Tracking</h3>
-        <p>Track buses in real-time and plan your journey with ease.</p>
-      </div>
-      <div class="feature-item">
-        <a href="complaints.html" class="feature-button"><i class="fas fa-exclamation-triangle"></i></a>
-        <h3>Complaint Box</h3>
-        <p>Submit your complaints and help us improve the services.</p>
-      </div>
-    </div>
-  </section>
+  <!-- Route Selector -->
+  <div class="route-selector">
+    <label for="routeSelect">Choose a route:</label>
+    <select id="routeSelect">
+      <option value="route1">Route 1: RV College to MG Road</option>
+      <option value="route2">Route 2: RV College to Kengeri</option>
+      <option value="route3">Route 3: RV College to Sarjapur</option>
+    </select>
+  </div>
+
+  <!-- Map container -->
+  <div id="map"></div>
 
   <footer>
-    <p>&copy; 2024 Public Transport Survey | Designed for better commuting.</p>
+    <p>&copy; 2024 Public Transport Survey | Real-Time Tracking Prototype.</p>
   </footer>
 
+  <!-- Include your script file -->
   <script src="script.js"></script>
 </body>
 </html>
